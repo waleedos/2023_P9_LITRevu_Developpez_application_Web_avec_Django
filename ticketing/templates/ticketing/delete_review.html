@@ -1,0 +1,14 @@
+{% extends 'ticketing/base.html' %}
+{% block content_ticketing %}
+
+    {% include 'ticketing/builtin/title.html' with text='Confirmation' %}
+
+    <div class='border m-2 p-2 review-header'>
+        <p class='text-center m-3'>Suppression de la critique "{{ review.headline }}" créé le {{ review.time_created }} ?</p>
+        <form method='POST'>
+            {% csrf_token %}
+            {% include 'ticketing/builtin/buttons.html' with text='Confirmer' %}
+        </form>
+    </div>
+<!-- Powered by EL-WALID EL-KHABOU --> 
+{% endblock %}

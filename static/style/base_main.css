@@ -1,0 +1,28 @@
+.main-content {
+    flex-grow: 1 !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #003569;
+    color: #FFF;
+}
+
+.banner {
+    background-color : #007BFF;
+}
+
+.footer {
+    flex-shrink: 0 !important;
+    background-color: #000 !important;
+    margin-top: auto !important;
+}
+
+.mb-auto {
+    flex-grow: 1;
+    min-height: 60vh; /* vous pouvez ajuster cette valeur */
+}
+
+

@@ -1,0 +1,18 @@
+{% extends 'authentication/base.html' %}
+{% block content_authentication %}
+
+    <form method='POST' enctype='multipart/form-data'>
+        {% csrf_token %}
+
+        <table class='mx-auto'>
+            {% include 'authentication/builtin/title.html' with text='Remplacement de votre photo de profil' %}
+
+            <tbody>
+                <tr class='mt-2'><td class='text.dark'>{{ form.photo }}</td></tr>
+            </tbody>
+
+            {% include 'authentication/builtin/buttons.html' with text='Enregistrer' %}
+        </table>
+    </form>
+<!-- Powered by EL-WALID EL-KHABOU -->
+{% endblock content_authentication %}

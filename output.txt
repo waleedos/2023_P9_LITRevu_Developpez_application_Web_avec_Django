@@ -1,0 +1,124 @@
+.
+├── authentication
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── static
+│   │   └── style
+│   │       └── base_authentication.css
+│   ├── templates
+│   │   └── authentication
+│   │       ├── base.html
+│   │       ├── builtin
+│   │       │   ├── buttons.html
+│   │       │   └── title.html
+│   │       ├── login.html
+│   │       ├── my_account.html
+│   │       ├── password_change_done.html
+│   │       ├── password_change_form.html
+│   │       ├── signup.html
+│   │       ├── update_account.html
+│   │       └── update_photo.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── db.sqlite3
+├── litreview
+│   ├── asgi.py
+│   ├── db.sqlite3
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── logos
+│   ├── forelif.png
+│   ├── LITReview1.png
+│   ├── LITReview3.png
+│   └── LITReview.png
+├── manage.py
+├── media
+│   ├── 1516974098091_5XmQNfW.jpeg
+│   ├── 1516974098091.jpeg
+│   ├── 1516974098091_YbzFOhG.jpeg
+│   ├── 1.jpg
+│   ├── 1.png
+│   ├── 2.jpg
+│   ├── 350363001_152791214350884_7718922411408764415_n_magic.jpg
+│   ├── 3.jpeg
+│   ├── 3.jpg
+│   ├── 4.jpeg
+│   ├── 4.png
+│   ├── 5.jpeg
+│   ├── 8.jpeg
+│   ├── 93379e3a2072a01b_The_Metamorphosis.jpg
+│   ├── 9.jpeg
+│   ├── A1.png
+│   ├── admin.png
+│   ├── Avatar_-_Flo37.png
+│   ├── Avatar_-_Henri62.png
+│   ├── Avatar_-_Sophie14.png
+│   ├── Clapton.png
+│   ├── Clapton_UIlxIGU.png
+│   ├── DSC_4232.JPG
+│   ├── harry-potter.jpg
+│   ├── Harry_Potter.png
+│   ├── jules-cesar.jpg
+│   ├── La_route.png
+│   ├── le-seigneur-des-anneaux.jpg
+│   ├── le-seigneur-des-anneaux_Qeea8Yd.jpg
+│   ├── vercingetorix.jpeg
+│   └── XFiles.png
+├── output.txt
+├── README.md
+├── requirements.txt
+├── static
+│   ├── favicon.ico
+│   ├── LITReview1.png
+│   ├── LITReview3.png
+│   ├── LITReview.png
+│   └── style
+│       └── base_main.css
+├── subscription
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── templates
+│   │   └── subscription
+│   │       └── management.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── templates
+│   └── base.html
+├── ticketing
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── static
+│   │   └── style
+│   │       └── base_ticketing.css
+│   ├── templates
+│   │   └── ticketing
+│   │       ├── base.html
+│   │       ├── builtin
+│   │       │   ├── buttons.html
+│   │       │   ├── form_review.html
+│   │       │   ├── form_ticket.html
+│   │       │   ├── review.html
+│   │       │   ├── ticket.html
+│   │       │   └── title.html
+│   │       ├── create_complete_review.html
+│   │       ├── create_review.html
+│   │       ├── create_ticket.html
+│   │       ├── delete_review.html
+│   │       ├── delete_ticket.html
+│   │       ├── flux.html
+│   │       └── post.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+└── tox.ini
+
+21 directories, 100 files

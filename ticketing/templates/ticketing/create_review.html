@@ -1,0 +1,15 @@
+{% extends 'ticketing/base.html' %}
+{% block content_ticketing %}
+
+    {% include 'ticketing/builtin/title.html' with text=title %}
+
+    <div class='border my-2 p-3 review-header'>
+        <form method='POST' class='mb-4'>
+            {% csrf_token %}
+            {% include 'ticketing/builtin/form_review.html' with add_buttons=True %}
+        </form>
+
+        {% include 'ticketing/builtin/ticket.html' with ticket=t buttons=False nested=True %}
+    </div>
+<!-- Powered by EL-WALID EL-KHABOU --> 
+{% endblock %}

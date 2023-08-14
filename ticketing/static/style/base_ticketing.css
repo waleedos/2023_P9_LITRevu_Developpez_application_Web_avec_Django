@@ -1,0 +1,38 @@
+/* https://htmlcolors.com/palette/2267/spring-pastel */
+/* Powered by EL-WALID EL-KHABOU */ 
+.ticket-header {
+    background-color : #C0E2FA;
+    color : #000
+}
+.ticket {
+    background-color : #EFF8FE;
+    color : #000
+}
+
+.review-header {
+    background-color : #D9D9D9;
+    color : #000
+}
+.review {
+    background-color : #FBFBFC;
+    color : #000
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #003569;
+    color: #FFF;
+}
+
+.main-content {
+    flex-grow: 1; /* Permet au contenu principal de prendre tout l'espace disponible */
+}
+
+.footer {
+    flex-shrink: 0 !important;
+    background-color: #000 !important;
+    margin-top: auto !important;
+}
+
