@@ -62,20 +62,25 @@ Afin de pouvoir tester l'application en local, le fichier SQLite est présent da
 Il contient plusieurs utilisateurs :
 
 ```
-Sophie14       PassDeTest14
-Flo37          PassDeTest37
-Henry62        PassDeTest62
-admin          PassAdmin10
+admin           EL-walid_1234@+    (admin et Django-admin)
+Si-Mo           Courtoi26
+Souzane         Bitros95+
+Nadej           Kilom95+7
+Florent         Kabis95200+
+François        Limoge92008
+EL-walid        Base1304@+
 ```
 
 Pour accèder à la page d'administration, entrez l'adresse suivante puis connectez vous avec le compte *admin* :
 
     http://localhost:8000/admin/
 
-****
+
 ### Pep8
 
 Le paquet flake8-html est présent dans l'environnemnt virtuel, vous pouvez générer un nouveau rapport avec la commande 
 suivante :
 
     flake8 --format=html --htmldir=flake-report
+
+### Powered by EL-WALID EL-KHABOU
