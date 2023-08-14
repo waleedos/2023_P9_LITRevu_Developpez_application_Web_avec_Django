@@ -1,4 +1,4 @@
-# ocrp9
+# OpenClassrooms Project N°9
 OpenClassRooms Projet 9  
 Développez une application Web en utilisant Django
 
@@ -6,7 +6,7 @@ Développez une application Web en utilisant Django
 ![Logo FLinguenheld](https://raw.githubusercontent.com/FLinguenheld/ocrp9/main/logos/forelif.png "Pouet")
 
 
-****
+
 ### Description
 
 L'objectif de ce projet est de découvrir le framework Django en réalisant le MVP d'une application web.  
@@ -19,7 +19,7 @@ Les utilisateurs peuvent :
 - Suivre d'autres utilisateurs
 
 
-****
+
 ### Installation
 
 Rendez-vous dans le dossier de votre choix puis lancez un terminal.  
@@ -41,7 +41,7 @@ Installez-les avec la commande :
     pip install -r requirement.txt
 
 
-****
+
 ### Lancement
 
 Rendez-vous dans le dossier *ocrp9* et activez l'environnement virtuel.  
@@ -55,7 +55,7 @@ Ouvrez votre navigateur web et entrez l'adresse suivante pour afficher l'applica
 
     http://localhost:8000/
 
-****
+
 ### Tests
 
 Afin de pouvoir tester l'application en local, le fichier SQLite est présent dans le dépôt GitHub.  
@@ -84,3 +84,5 @@ suivante :
     flake8 --format=html --htmldir=flake-report
 
 ### Powered by EL-WALID EL-KHABOU
+
+E-mail : ewek.dev@gmail.com
