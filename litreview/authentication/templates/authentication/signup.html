@@ -1,0 +1,22 @@
+{% extends "authentication/base.html" %}
+{% block title %}Formulaire d'inscription{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 signup_form">
+            <h1>Inscrivez-vous</h1>
+            {% if form.errors %}
+                {{form.errors }}
+            {% endif %}
+            <form method='post'>{% csrf_token %}
+            {{ form.as_p }}
+                <button class="btn btn-outline-dark" type="submit">S'inscrire</button>
+            </form>
+            <form  action="{% url 'home' %}" method='get'>
+                {% csrf_token %}
+                <input class="btn btn_back btn-outline-dark"  type='submit' value='Retourner'>
+            </form>
+        </div>
+    </div>
+
+<!-- Powered By M. EL-WALID EL-KHABOU -->
+{% endblock content %}

@@ -1,0 +1,333 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&display=swap');
+
+/* main styles */
+
+body{
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+}
+
+.block_page{
+    display: flex;
+    flex-direction: column;
+    min-height: 99%;
+    font-family: 'Bricolage Grotesque';
+    background-color: #FDFEFE;
+    background-image: url("../image/background.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+ header{
+    width: 100%;
+    min-height: 100px;
+    position: relative;
+    z-index: 120;
+    background-color: #01aff3;
+}
+
+.block_blog{
+     flex: 1;
+}
+
+footer{
+    background-color:black;
+    text-align: center;
+    margin-bottom: 2px;
+    padding-top: 10px;
+    height: 40px;
+    color: white;
+    font-weight: 900;
+    font-family: 'Bricolage Grotesque';
+}
+
+h1{
+    font-size: 1.2em;
+    margin-top: 15px;
+    color: blue;
+    font-weight: 900;
+}
+
+
+h2{
+    font-size: 1em;
+}
+
+.date{
+  float: right;
+  margin-right: 5px;
+  color: #01aff3;
+}
+
+.content_style{
+    background-color: #FBFCFC;
+    box-shadow: 5px 5px 5px grey;
+    border-radius: 15px;
+    padding: 1em;
+    margin-bottom: 20px;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0px;
+ }
+
+
+/* Header*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #01aff3;
+    position: relative;
+    width: 100%;
+    font-size: 1em;
+}
+
+.navbar li {
+    display: inline-block;
+    margin-right: 0.6em;
+
+}
+
+.navbar li a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.navbar li a:hover {
+   color: #FDFEFE;
+
+}
+
+.brain-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    padding-right: 15px;
+    min-height: 100px;
+}
+
+.current_user{
+    font-size: 1em;
+    margin-right: 25px;
+    padding: 0;
+    color: white;
+}
+
+.block_blog{
+    margin-top: 40px;
+
+}
+
+/* Flux */
+.btn_flux {
+    display:flex;
+    margin: 20px 0px 20px 0px;
+    justify-content: space-evenly;
+}
+
+.btn_nav {
+    width: 200px;
+    color: white;
+    background-color: darkblue;
+    font-weight: bolder;
+}
+
+.flux_ticket{
+    margin: 3% 0;
+}
+
+.btn_right{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.page_number{
+   margin: 20px 0 20px 0;
+}
+
+
+/* Create review */
+
+#id_rating {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn_review{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    background-color: #01aff3;
+}
+
+/* POST */
+
+.ticket_post, .review_post{
+    margin: 4% 0;
+}
+
+.ticket_post_img{
+   margin-left: 10px;
+   margin-bottom: 10px;
+}
+
+.post_btns{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.btns{
+   width: 100px;
+   margin: 0 3px 5px 0;
+   margin-right: 5px;
+}
+.ticket_review {
+    margin-bottom: 5px;
+}
+
+.btn_update {
+    margin-right: 20px;
+}
+
+.ticket_review {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+
+
+.ticket_old{
+     border: 1px solid black;
+     padding: 1em;
+     margin: 10px 0 10px 0;
+}
+
+
+table.rating td:nth-child(1) h2{
+    font-size: 18px;
+}
+
+table.rating td:nth-child(2){
+    width: 100px;
+    position: relative;
+}
+
+table.rating td:nth-child(2) div{
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    z-index: 100;
+}
+
+table.rating td:nth-child(2) img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 110;
+}
+
+/* SUBSCRIPTION */
+
+
+.follow_page, .follow_user{
+    align-items: center;
+    text-align:center;
+}
+
+.tab_follower{
+    margin:auto;
+}
+.follow{
+    margin-top: 20px;
+}
+
+.tab_follow{
+    width: 400px;
+    text-align: left;
+}
+
+/* DELETE */
+
+.btn_review_delete, .btn_ticket_delete{
+    display: flex;
+
+}
+.btn_cancel{
+    margin-left: 10px;
+    width: 120px;
+}
+
+.unsubscrip{
+    display: flex;
+}
+
+.btn_unsubcrip{
+    width: 100px;
+}
+
+/*REEVIEW */
+
+.make_review {
+    margin-bottom: 10px;
+}
+
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+    padding: 2px 15px;
+}
+
+.ticket_review .ticket_review_content h2:first-of-type {
+    font-weight: bolder !important;
+}
+
+.ticket_review .ticket_review_content h2 {
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.link-suivante {
+    color: blue !important;
+    margin: 0px 6px !important;
+}
+
+.link-derniere {
+    color: blue !important;
+    margin: 0px 6px !important;
+}
+
+.btn_delete .btn {
+    color: white !important;
+    background-color: #f11b03 !important;
+    font-weight: bold !important;
+    margin-top: 10px;
+}
+
+.btn_update .btn {
+    color: white !important;
+    background-color: #01aff3 !important;
+    font-weight: bold !important;
+    margin-top: 10px;
+}
+/* Powered By M. EL-WALID EL-KHABOU*/

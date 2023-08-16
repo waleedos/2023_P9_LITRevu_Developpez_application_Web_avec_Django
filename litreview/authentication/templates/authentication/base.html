@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="{% static 'authentication/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'authentication/css/styles.css' %}">
+    </head>
+    <body>
+        <div class="block_page">
+            <header>
+                <img src="{% static 'authentication/logo.png' %}" alt="LOGO" class="image_logo">
+            </header>
+            <main class="content-container"> <!-- Ajout de la balise <main> pour mieux structurer -->
+                {% block content %}{% endblock content %}
+            </main>
+            <footer>
+                <h2> © 2023 LITReview - Powered by EL-WALID EL-KHABOU - Dans le cadre du Projet N°9 de OC / 08/2023.</h2>
+            </footer>
+        </div>
+    </body>
+</html>
+<!-- Powered By M. EL-WALID EL-KHABOU -->

@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Désabonner{% endblock %}
+
+{% block content %}
+
+  <h1 class="title">Désabonner</h1>
+
+<div class="content_style">
+    <p>Etes-vous sûr de vouloir vous désabonner de {{follow.followed_user}} ?</p>
+    <div class="unsubscrip">
+        <div class="unsubcrip_form">
+            <form action="" method="post">
+              {% csrf_token %}
+              <input class="btn btn-outline-dark " type="submit" value="Désabonner">
+            </form>
+        </div>
+        <div class="back_subcrip">
+            <form  action="{% url 'subscrip' %}" method='get'>
+              {% csrf_token %}
+              <input class="btn btn_back btn-outline-dark btn_cancel"  type='submit' value='Annuler'>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

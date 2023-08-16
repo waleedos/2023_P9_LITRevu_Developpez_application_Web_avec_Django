@@ -1,0 +1,79 @@
+{% extends "blog/base.html" %}
+{% load blog_extras %}
+{% load static %}
+{% block title %}Flux{% endblock %}
+
+{% block content %}
+
+    <div class="btn_flux">
+        <form  action="{% url 'create_ticket' %}" method='get'>
+            {% csrf_token %}
+            <input class="btn btn_nav btn-outline-dark" type='submit' value='Demander une critique'>
+        </form>
+        <form  action="{% url 'review' %}" method='get'>
+            {% csrf_token %}
+            <input class="btn btn_nav btn-outline-dark " type='submit' value='Créer une critique'>
+        </form>
+    </div>
+    <div class="flux_content ">
+        {% for instance in page_obj %}
+            {% if instance|model_type == 'Ticket' %}
+                <div class="flux_ticket content_style">
+                    {% if instance.user == request.user %}
+                        <h2>Vous avez demandé une critique</h2>
+                    {% else %}
+                        <h2>{{instance.user}} a demandé une critique </h2>
+                    {% endif %}
+                    {% include 'blog/partials/ticket_snippet.html' with ticket=instance %}
+                    <div class="btn_right">
+                        <div></div>
+                        <div class="btn_update">
+                            <form  action="{% url 'answer' instance.id %}" method='get' >
+                                {% csrf_token %}
+                                {% if instance.reviews.all|length == 0 %}
+                                    <input class="btn btn-outline-dark" type='submit' value="Créer une critique">
+                                {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% elif instance|model_type == 'Review' %}
+                <div class="review_post content_style">
+                    {% if instance.user == request.user %}
+                        <h2>Vous avez publié une critique</h2>
+                    {% else %}
+                        <h2>{{instance.user}} a publié une critique </h2>
+                    {% endif %}
+                    {% include 'blog/partials/review_snippet.html' with review=instance %}
+                    <div class="btn_right">
+                        <div></div>
+                        <div class="btn_update">
+                            <form  action="{% url 'answer' instance.ticket.id %}" method='get' >
+                                {% csrf_token %}
+                                {% if instance.user != request.user %}
+                                    <input class="btn btn_review btn-outline-dark" type='submit' value="Créer une critique">
+                                {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="page_number">
+            <span>
+                {% if page_obj.has_previous %}
+                    <a href="?page=1"><< première</a>
+                    <a href="?page={{ page_obj.previous_page_number}}">précédente</a>
+                {% endif %}
+                <span>
+                 Page {{ page_obj.number}} sur {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="link-suivante">suivante</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="link-derniere">dernière >></a>
+                {% endif %}
+            </span>
+        </div>
+
+    </div>
+{% endblock content %}

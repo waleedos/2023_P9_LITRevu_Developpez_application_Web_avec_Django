@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Modifier votre critique{% endblock %}
+{% block content %}
+  <h1 class="title">Modifier votre critique</h1>
+    <div class="content_style make_review ">
+        <h2>Vous êtes en train de poster en réponse à</h2>
+        <div class="ticket_old" >
+            {% if ticket.user == request.user %}
+                <h2>Vous avez demandé une critique</h2>
+            {% else %}
+                <h2>{{ticket.user}} a demandé une critique </h2>
+            {% endif %}
+            <h2 class="date">{{ticket.time_created|date:"h:i, j F Y"}}</h2>
+            <h2>{{ticket.title}} - {{ticket.description}} </h2>
+            <p><img src="{{ticket.image.url}}"></p>
+        </div>
+
+        <h1>Critique</h1>
+            <div>
+            <form action="" method="post"> {% csrf_token %}
+                {{ form.as_p }}
+                <div class="btn_right">
+                    <div></div>
+                    <input class="btn btn-outline-dark" type="submit" value="Modifier">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

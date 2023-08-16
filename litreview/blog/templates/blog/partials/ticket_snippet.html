@@ -1,0 +1,6 @@
+{% load blog_extras %}
+
+    <h2 class="date"> {{ticket.time_created|date:"H:i, j F Y"}} </h2>
+    <h2> {{ticket.title}} - {{ticket.description}}</h2>
+    <img class="ticket_post_img" src="{{ticket.image.url}}">
+

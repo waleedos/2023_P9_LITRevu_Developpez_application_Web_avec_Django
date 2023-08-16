@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Créer un ticket{% endblock %}
+
+{% block content %}
+    <h1 class="title">Créer un ticket</h1>
+    <div class="content_style">
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+            {{ form.as_p}}
+            <div class="btn_right">
+                <div></div>
+                <button class="btn btn_ticket btn-outline-dark" type="submit">Envoyer</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

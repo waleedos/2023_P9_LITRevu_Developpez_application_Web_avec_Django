@@ -1,0 +1,23 @@
+{% load blog_extras %}
+{% load static %}
+
+<h2 class="date"> {{instance.time_created|date:"H:i, j F Y"}} </h2>
+    <table class="rating">
+        <tr>
+            <td>
+                <h2>{{review.headline}} -</h2>
+            </td>
+            <td>
+                <div style="width: calc(20% * {{review.rating}})"></div>
+                <img src="{% static '/blog/image/stars.png'%}">
+            </td>
+        </tr>
+    </table>
+    <h2>{{review.body}}</h2>
+    <div class="ticket_review">
+        <div class="ticket_review_content">
+            <h2>Ticket - {% get_user_display review.ticket.user %}</h2>
+            <h2>{{review.ticket.title}} - {{review.ticket.description}}</h2>
+            <p><img class="ticket_post_img" src="{{review.ticket.image.url}}"></p>
+        </div>
+    </div>

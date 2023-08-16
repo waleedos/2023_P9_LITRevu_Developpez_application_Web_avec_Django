@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <title>{% block title %}{% endblock %}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/
+        normalize.min.css">
+      <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'blog/css/styles.css' %}">
+  </head>
+  <body>
+        <div class="container-fluid block_page">
+            <header>
+                <nav>
+                    <div class="blog_logo">
+                        <img src="{% static 'blog/image/logo.png' %}" alt="LOGO" width="100" >
+                    </div>
+                    <div class="brain-right">
+                        <div class="current_user">
+                            <h1>Bienvenue {{user}}</h1>
+                        </div>
+
+                        <ul class="navbar">
+                            <li><a href="{% url 'flux' %}">Flux</a></li>
+                            <li><a href="{% url 'post' %}">Post</a></li>
+                            <li><a href="{% url 'subscrip' %}">Abonnements</a></li>
+                            <li><a href="{% url 'logout' %}">Se déconnecter</a></li>
+                        </ul>
+
+                    </div>
+                 </nav>
+            </header>
+            <div class="container block_blog">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        {% block content %}{% endblock content %}
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <footer>
+                <h2> © 2023 LITReview - Powered by EL-WALID EL-KHABOU - Dans le cadre du Projet N°9 de OC / 08/2023.</h2>
+            </footer>
+        </div>
+  </body>
+</html>

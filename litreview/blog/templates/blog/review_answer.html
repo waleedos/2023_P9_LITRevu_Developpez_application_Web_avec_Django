@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+
+{% block title %} Créer une critique {% endblock %}
+
+{% block content %}
+    <h1 class="title">Créer une critique</h1>
+    <div class="content_style">
+        <h2>Vous êtes en train de poster en réponse à</h2>
+        <div class="ticket_old">
+           {% if ticket.user == request.user %}
+                <h2>Vous avez demandé une critique</h2>
+            {% else %}
+                <h2>{{ticket.user}} a demandé une critique </h2>
+            {% endif %}
+            {% include 'blog/partials/ticket_snippet.html' %}
+        </div>
+        <div>
+            <h2>Critique</h2>
+            <form action="" method="post"> {% csrf_token %}
+                {{ review_form.as_p }}
+                <div class="btn_right">
+                    <div></div>
+                    <input class="btn btn-outline-dark" type="submit" value="Envoyer">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

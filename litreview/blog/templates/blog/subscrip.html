@@ -1,0 +1,41 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Abonnements{% endblock %}
+
+{% block content %}
+    <h1 class="follow_user">Suivre d'autres utilisateurs</h1>
+    <div class="content_style follow_page">
+        <form method="post" >{% csrf_token %}
+            {{form}}
+            <button class=" btn btn-outline-dark" type="submit">Envoyer</button>
+            <p style="color: red;">{{error}}</p>
+            <p style="color: red;">{{message}}</p>
+        </form>
+        <div class="follow">
+            <h1>Abonnements</h1>
+            <table  class="tab_follower" width="500" border="1" style="border-collapse:collapse">
+                <tbody>
+                    {% for user in followed_users%}
+                        <tr>
+                            <td class="tab_follow">{{user.username}}</td>
+                            <td><a href="{% url 'unsubscrip' user.id %}">Désabonner </a></td>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <div class="follow">
+            <h1>Abonnés</h1>
+            <table class="tab_follower" width="500" border="1" style="border-collapse:collapse">
+                <tbody>
+                {% for user in followers %}
+                <tr>
+                    <td class="tab_follow"  >{{user.username}} </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}

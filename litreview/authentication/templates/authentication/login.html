@@ -1,0 +1,29 @@
+{% extends "authentication/base.html" %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block content %}
+    <div class="row forms">
+        <div class="col-md-6 signup">
+            <h1>Inscrivez-vous maintenant</h1>
+            <div class="signup_btn">
+                <form  action="{% url 'signup' %}" method='get' >
+                {% csrf_token %}
+                <input class="btn btn-outline-dark" type='submit' value="S'inscrire">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 login">
+            <h1>Connectez-vous</h1>
+            <p>{{ message}}</p>
+            <div class="login_form">
+                <form method='post'> {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-login btn-outline-dark" type='submit' >Se connecter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- Powered By M. EL-WALID EL-KHABOU -->
+
+{% endblock content %}
