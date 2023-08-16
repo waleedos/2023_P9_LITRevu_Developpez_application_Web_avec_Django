@@ -1,5 +1,5 @@
-# OpenClassrooms Project N°9
-## P9_DEVELOPPEZ-UNE-APPLICATION-WEB-EN-UTILISANT-DJANGO
+<h1 align="center">OpenClassrooms Project N°9</h1>
+<h2 align="center">P9_DEVELOPPEZ-UNE-APPLICATION-WEB-EN-UTILISANT-DJANGO</h1>
 
 ![Logo LITReview](https://raw.githubusercontent.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/main/documentation/litreview_logo.png)
 
