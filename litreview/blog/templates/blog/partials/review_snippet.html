@@ -1,23 +1,54 @@
+<!--Le fichier review_snippet.html est un modèle partiel utilisé pour afficher un extrait ou un
+    segment d'une critique (review). C'est probablement un morceau réutilisable de code qui est
+    inclus dans d'autres modèles pour afficher des critiques. Voici une explication détaillée de
+    son contenu :-->
+
 {% load blog_extras %}
 {% load static %}
+<!--Chargement des balises personnalisées et statiques : Les balises blog_extras (les balises de
+    modèle personnalisées liées à l'application de blog) et static sont chargées pour être utilisées
+    dans le modèle.-->
 
 <h2 class="date"> {{instance.time_created|date:"H:i, j F Y"}} </h2>
+<!--Affichage de la date de création : La date et l'heure de création de l'instance (une critique)
+    sont formatées et affichées.-->
+
     <table class="rating">
+    <!--Un tableau est utilisé pour afficher la notation (étoiles) et le titre de la critique.-->    
+
         <tr>
             <td>
                 <h2>{{review.headline}} -</h2>
             </td>
             <td>
                 <div style="width: calc(20% * {{review.rating}})"></div>
+                <!--Affichage de la notation : Cette div représente visuellement la notation. La largeur
+                    de cette div est déterminée par la note de la critique. Si review.rating vaut 5, par
+                    exemple, la largeur sera de 100 %.-->    
+
                 <img src="{% static '/blog/image/stars.png'%}">
+                <!--Une image d'étoiles est utilisée pour représenter visuellement la notation.-->    
+
             </td>
         </tr>
     </table>
+
     <h2>{{review.body}}</h2>
+    <!--Corps de la critique : Le contenu principal de la critique est affiché.-->
+
     <div class="ticket_review">
+    <!--Conteneur de ticket associé : Un conteneur pour afficher le ticket associé à cette critique.-->    
+
         <div class="ticket_review_content">
             <h2>Ticket - {% get_user_display review.ticket.user %}</h2>
+            <!--Affichage du propriétaire du ticket : Le nom d'affichage de l'utilisateur qui a créé le ticket
+                associé à cette critique est affiché. La balise personnalisée get_user_display est utilisée pour cela.-->
+
             <h2>{{review.ticket.title}} - {{review.ticket.description}}</h2>
+            <!--Titre et description du ticket : Le titre et la description du ticket associé à cette critique sont affichés.-->    
+
             <p><img class="ticket_post_img" src="{{review.ticket.image.url}}"></p>
+            <!--Image du ticket : Si le ticket associé à cette critique a une image, elle est affichée.-->
+
         </div>
     </div>

@@ -1,17 +1,44 @@
 {% extends "authentication/base.html" %}
+<!--Extension du modèle de base : signup.html hérite du modèle base.html situé dans le répertoire authentication.-->
+
 {% block title %}Formulaire d'inscription{% endblock %}
+<!--Bloc de titre : Le titre par défaut de base.html est remplacé par "Formulaire d'inscription".-->
+
 {% block content %}
+<!--Début du bloc de contenu : Le contenu spécifique de la page d'inscription commence ici.-->
+
     <div class="row">
+    <!--Conteneur principal : Une div avec la classe row pour une mise en page basée sur une grille.-->    
+
         <div class="col-md-12 signup_form">
+        <!--Colonne du formulaire d'inscription : Il s'agit d'une seule colonne occupant toute la largeur
+            (12 colonnes) sur les écrans de taille moyenne.-->    
+
             <h1>Inscrivez-vous</h1>
+            <!--Titre : Un titre pour la section d'inscription.-->
+
             {% if form.errors %}
                 {{form.errors }}
             {% endif %}
+            <!--Affichage des erreurs : Si des erreurs sont présentes dans le formulaire (par exemple,
+                un nom d'utilisateur déjà pris), elles seront affichées ici.-->
+
             <form method='post'>{% csrf_token %}
+            <!--Formulaire d'inscription : Le début du formulaire d'inscription. Le {% csrf_token %}
+                est une protection contre les attaques CSRF.-->    
+
             {{ form.as_p }}
+            <!--Rendu du formulaire : Cette ligne affiche le formulaire d'inscription (probablement un
+                ModelForm ou un Form de Django) sous forme de paragraphes.-->
+
                 <button class="btn btn-outline-dark" type="submit">S'inscrire</button>
+                <!--Le bouton d'inscription pour soumettre le formulaire.-->
+
             </form>
             <form  action="{% url 'home' %}" method='get'>
+            <!--Formulaire de retour : Un simple formulaire pour rediriger les utilisateurs vers la page
+                d'accueil s'ils décident de ne pas s'inscrire.-->    
+
                 {% csrf_token %}
                 <input class="btn btn_back btn-outline-dark"  type='submit' value='Retourner'>
             </form>

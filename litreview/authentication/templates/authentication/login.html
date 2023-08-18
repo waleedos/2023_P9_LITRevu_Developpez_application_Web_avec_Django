@@ -1,28 +1,55 @@
 {% extends "authentication/base.html" %}
+<!--Extension du modèle de base : Cette ligne indique que login.html hérite de la structure de base.html
+    situé dans le répertoire authentication. Cela signifie que toute la mise en page et la structure de
+    base.html seront utilisées, mais que les blocs spécifiques peuvent être remplacés ou complétés.-->
 
 {% block title %}Page d'accueil{% endblock %}
+<!--Bloc de titre : Le titre par défaut de base.html est remplacé par "Page d'accueil".-->
 
 {% block content %}
+<!--Début du bloc de contenu : Ici commence le contenu spécifique de la page de connexion qui remplacera
+    le bloc content dans base.html.-->
+
     <div class="row forms">
+    <!-- Conteneur principal : Une div avec la classe row pour une mise en page basée sur une grille, typique
+        des frameworks CSS comme Bootstrap.-->    
+
         <div class="col-md-6 signup">
             <h1>Inscrivez-vous maintenant</h1>
             <div class="signup_btn">
                 <form  action="{% url 'signup' %}" method='get' >
+                <!--Formulaire d'inscription : Un bouton pour rediriger les utilisateurs vers la page d'inscription.--> 
+
                 {% csrf_token %}
                 <input class="btn btn-outline-dark" type='submit' value="S'inscrire">
                 </form>
             </div>
         </div>
+        <!--Colonne d'inscription : La première colonne (sur un total de deux) destinée à l'inscription. Elle
+            prend la moitié de l'espace disponible sur les écrans de taille moyenne (col-md-6).-->
+
         <div class="col-md-6 login">
             <h1>Connectez-vous</h1>
             <p>{{ message}}</p>
+            <!--Message : Un espace pour afficher un message éventuel, comme une erreur d'authentification.-->
+
             <div class="login_form">
                 <form method='post'> {% csrf_token %}
+                <!--Formulaire de connexion : Le formulaire proprement dit où les utilisateurs saisissent leurs 
+                    identifiants. Le {% csrf_token %} est une protection contre les attaques CSRF, une exigence
+                    pour tous les formulaires POST dans Django.-->
+                    
                     {{ form.as_p }}
+                    <!--Rendu du formulaire : Cette ligne affiche le formulaire de connexion (probablement un
+                        ModelForm ou un Form de Django) sous forme de paragraphes.-->
+
                     <button class="btn btn-login btn-outline-dark" type='submit' >Se connecter</button>
                 </form>
             </div>
         </div>
+        <!--Colonne de connexion : La deuxième colonne pour le formulaire de connexion. Elle occupe également la
+            moitié de l'espace sur les écrans de taille moyenne.-->
+
     </div>
 <!-- Powered By M. EL-WALID EL-KHABOU -->
 

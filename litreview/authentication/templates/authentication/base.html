@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 {% load static %}
+<!-- Chargement de la balise static : C'est une balise spécifique à Django qui permet de charger des fichiers statiques,
+comme des images ou des CSS, à partir des dossiers statiques définis dans votre projet.-->
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
+        <!-- Titre du document : La balise title définira le titre de la page. Le bloc title est un espace réservé pour
+        un titre spécifique qui peut être rempli dans des modèles enfants.-->
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--balise Viewport qui aide à rendre la page correctement sur les appareils mobiles et à définir l'échelle initiale.-->
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
         <link rel="stylesheet" href="{% static 'authentication/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'authentication/css/styles.css' %}">
     </head>
     <body>
         <div class="block_page">
+        <!-- Conteneur principal : Cette div englobe tout le contenu de la page.-->
+            
             <header>
                 <img src="{% static 'authentication/logo.png' %}" alt="LOGO" class="image_logo">
             </header>
+
             <main class="content-container"> <!-- Ajout de la balise <main> pour mieux structurer -->
                 {% block content %}{% endblock content %}
             </main>
+            <!--Contenu principal : La balise main est utilisée pour le contenu principal du document. À l'intérieur,
+                vous avez un autre bloc, content, qui est probablement remplacé par le contenu spécifique de chaque page.-->
+            
             <footer>
                 <h2> © 2023 LITReview - Powered by EL-WALID EL-KHABOU - Dans le cadre du Projet N°9 de OC / 08/2023.</h2>
             </footer>
+            <!--Pied de page : Cette section contient les droits d'auteur et d'autres informations pertinentes pour 
+                le bas de la page.-->    
+
         </div>
     </body>
 </html>
