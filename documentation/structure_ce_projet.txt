@@ -1,0 +1,76 @@
+.
+├── documentation
+│   ├── litreview_logo.png
+│   └── my_project_diagram.png
+├── litreview
+│   ├── authentication
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── forms.py
+│   │   ├── models.py
+│   │   ├── static
+│   │   │   └── authentication
+│   │   │       ├── css
+│   │   │       │   ├── bootstrap.min.css
+│   │   │       │   └── styles.css
+│   │   │       └── logo.png
+│   │   ├── templates
+│   │   │   └── authentication
+│   │   │       ├── base.html
+│   │   │       ├── login.html
+│   │   │       └── signup.html
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── blog
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── forms.py
+│   │   ├── models.py
+│   │   ├── static
+│   │   │   └── blog
+│   │   │       ├── css
+│   │   │       │   ├── bootstrap.min.css
+│   │   │       │   └── styles.css
+│   │   │       └── image
+│   │   │           ├── background.jpg
+│   │   │           ├── logo.png
+│   │   │           └── stars.png
+│   │   ├── templates
+│   │   │   └── blog
+│   │   │       ├── base.html
+│   │   │       ├── create_ticket.html
+│   │   │       ├── flux.html
+│   │   │       ├── follow_remove.html
+│   │   │       ├── partials
+│   │   │       │   ├── review_snippet.html
+│   │   │       │   └── ticket_snippet.html
+│   │   │       ├── post.html
+│   │   │       ├── review_answer.html
+│   │   │       ├── review_delete.html
+│   │   │       ├── review.html
+│   │   │       ├── review_update.html
+│   │   │       ├── subscrip.html
+│   │   │       ├── ticket_delete.html
+│   │   │       └── ticket_update.html
+│   │   ├── templatetags
+│   │   │   └── blog_extras.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── db.sqlite3
+│   ├── litreview
+│   │   ├── asgi.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── manage.py
+│   └── media
+│       ├── 2_8DHPpTB.jpg
+│       ├── 2.jpg
+│       └── 5.jpeg
+├── README.md
+├── requirements.txt
+└── structure_ce_projet.txt
+
+19 directories, 54 files

@@ -113,6 +113,13 @@ http://localhost:8000/admin.
 ```
 Vous serez dirigé vers la page de connexion de l’administrateur. Vous pouvez ainsi avoir accès à l’interface d’administration après la saisie des identifiants du Super-Utilisateur.
 
+### Structure des dossiers et fichiers du projet :
+Afin de voir la structure complete du projet, vous pouvez voir le fichier /documentations/structure_ce_projet.txt, oubien vous pouvez meme
+générer de nouveau ce fichier de la façon suivante ;
+Executez la commande suivante quand vous etes à la racine du projet : 
+```
+tree -I 'env|__pycache__|flake-report|__init__.py|migrations' >> structure_ce_projet.txt
+```
 
 ### Pep8
 
