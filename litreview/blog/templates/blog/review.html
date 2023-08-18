@@ -1,24 +1,43 @@
-{% extends "blog/base.html" %}
+<!-- Le fichier "review.html" est utilisé pour permettre à un utilisateur de créer une nouvelle critique pour un livre ou un article. -->
 
-{% block title %} Créer une critique {% endblock %}
+{% extends "blog/base.html" %}  
+<!-- Héritage de la structure de base du fichier "base.html" du dossier "blog". -->
 
-{% block content %}
- <h1 class="title">Créer une critique</h1>
+{% block title %} Créer une critique {% endblock %} 
+<!-- Définition du titre de la page. -->
+
+{% block content %}  <!-- Début du contenu principal de la page. -->
+
+    <h1 class="title">Créer une critique</h1>
+    <!-- Titre principal de la page. -->
+
     <div class="content_style">
-        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <!-- Conteneur principal pour styliser le contenu. -->
+
+        <!-- Formulaire pour la création de la critique. -->
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}  <!-- Jeton pour protéger le formulaire contre les attaques CSRF. -->
+
             <div class="new_review_ticket">
+                <!-- Section pour entrer les détails du livre ou de l'article. -->
                 <h1>Livre / Article </h1>
-                {{ ticket_form.as_p}}
+                {{ ticket_form.as_p }}  <!-- Affichage des champs du formulaire pour le livre ou l'article. -->
             </div>
+
             <div class="new_review_content">
+                <!-- Section pour entrer le contenu de la critique. -->
                 <h1> Critique </h1>
-                {{ review_form.as_p}}
+                {{ review_form.as_p }}  <!-- Affichage des champs du formulaire pour la critique. -->
             </div>
+
             <div class="btn_right">
+                <!-- Conteneur pour le bouton de soumission. -->
                 <div></div>
-                 <button class="btn btn-outline-dark btn_review" type="submit">Envoyer</button>
+                <button class="btn btn-outline-dark btn_review" type="submit">Envoyer</button>
+                <!-- Bouton pour soumettre le formulaire et créer la critique. -->
             </div>
 
         </form>
      </div>
+
 {% endblock content %}
