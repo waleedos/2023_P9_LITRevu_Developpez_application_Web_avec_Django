@@ -1,29 +1,41 @@
-{% extends "blog/base.html" %}
+<!-- Ce fichier est utilisé pour confirmer la décision d'un utilisateur de se désabonner d'un autre utilisateur. -->
 
-{% block title %}Désabonner{% endblock %}
+{% extends "blog/base.html" %}  <!-- Héritage de la structure de base du fichier "base.html" du dossier "blog". -->
 
-{% block content %}
+{% block title %}Désabonner{% endblock %}  <!-- Définition du titre de la page. -->
 
-  <h1 class="title">Désabonner</h1>
+{% block content %}  <!-- Début du contenu principal de la page. -->
 
-<div class="content_style">
+  <h1 class="title">Désabonner</h1>  <!-- Titre de la page. -->
+
+  <!-- Contenu principal pour la confirmation du désabonnement. -->
+  <div class="content_style">
+
+    <!-- Message de confirmation demandant à l'utilisateur s'il est sûr de vouloir se désabonner. -->
     <p>Etes-vous sûr de vouloir vous désabonner de {{follow.followed_user}} ?</p>
+    
+    <!-- Conteneur pour les boutons de désabonnement et d'annulation. -->
     <div class="unsubscrip">
-        <div class="unsubcrip_form">
-            <form action="" method="post">
-              {% csrf_token %}
-              <input class="btn btn-outline-dark " type="submit" value="Désabonner">
-            </form>
-        </div>
-        <div class="back_subcrip">
-            <form  action="{% url 'subscrip' %}" method='get'>
-              {% csrf_token %}
-              <input class="btn btn_back btn-outline-dark btn_cancel"  type='submit' value='Annuler'>
-            </form>
-        </div>
-    </div>
-</div>
 
+      <!-- Formulaire pour confirmer le désabonnement. -->
+      <div class="unsubcrip_form">
+          <form action="" method="post">  <!-- L'action est vide, ce qui signifie que le formulaire sera soumis à l'URL actuelle. -->
+            {% csrf_token %}  <!-- Token CSRF pour la sécurité du formulaire. -->
+            <!-- Bouton pour confirmer le désabonnement. -->
+            <input class="btn btn-outline-dark" type="submit" value="Désabonner">
+          </form>
+      </div>
 
+      <!-- Formulaire pour annuler le désabonnement et revenir à la page précédente. -->
+      <div class="back_subcrip">
+          <form action="{% url 'subscrip' %}" method='get'>  <!-- L'action redirige vers l'URL 'subscrip'. -->
+            {% csrf_token %}  <!-- Token CSRF pour la sécurité du formulaire. -->
+            <!-- Bouton pour annuler et revenir à la page précédente. -->
+            <input class="btn btn_back btn-outline-dark btn_cancel" type='submit' value='Annuler'>
+          </form>
+      </div>
+
+    </div>  <!-- Fin du conteneur des boutons. -->
+  </div>  <!-- Fin du contenu principal. -->
 
 {% endblock content %}

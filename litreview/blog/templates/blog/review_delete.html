@@ -1,25 +1,40 @@
-{% extends "blog/base.html" %}
+<!-- Le fichier "review_delete.html" est utilisé pour permettre à un utilisateur de supprimer une critique qu'il a précédemment créée. -->
+
+{% extends "blog/base.html" %}  <!-- Héritage de la structure de base du fichier "base.html" du dossier "blog". -->
 
 {% block title %}Supprimer votre critique {% endblock %}
-{% block content %}
-  <h1 class="title">Supprimer votre critique</h1>
+<!-- Définition du titre de la page. -->
 
-<div class="content_style">
-    <p>Etes-vous sûr de vouloir supprimer la critique : {{ review.headline }} ?</p>
-    <div class="btn_review_delete">
-        <div>
-            <form action="" method="post">
-                {% csrf_token %}
-                <input class="btn btn-outline-dark" type="submit" value="Supprimer">
-            </form>
-        </div>
-        <div>
-            <form  action="{% url 'post' %}" method='get'>
-                {% csrf_token %}
-                <input class="btn btn_cancel btn-outline-dark"  type='submit' value='Annuler'>
-            </form>
+{% block content %}  <!-- Début du contenu principal de la page. -->
+
+    <h1 class="title">Supprimer votre critique</h1>
+    <!-- Titre principal de la page. -->
+
+    <div class="content_style">  <!-- Conteneur principal pour styliser le contenu. -->
+
+        <!-- Message de confirmation pour s'assurer que l'utilisateur souhaite vraiment supprimer la critique. -->
+        <p>Etes-vous sûr de vouloir supprimer la critique : {{ review.headline }} ?</p>
+
+        <!-- Conteneur pour les boutons de suppression et d'annulation. -->
+        <div class="btn_review_delete">
+
+            <!-- Bouton pour supprimer la critique. -->
+            <div>
+                <!-- Formulaire pour supprimer la critique. -->
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input class="btn btn-outline-dark" type="submit" value="Supprimer">
+                </form>
+            </div>
+
+            <!-- Bouton pour annuler l'action et revenir aux posts de l'utilisateur. -->
+            <div>
+                <form  action="{% url 'post' %}" method='get'>
+                    {% csrf_token %}
+                    <input class="btn btn_cancel btn-outline-dark"  type='submit' value='Annuler'>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock content %}

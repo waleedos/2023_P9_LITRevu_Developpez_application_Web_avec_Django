@@ -1,23 +1,44 @@
-{% extends "blog/base.html" %}
+<!-- Ce fichier "review_answer.html" est utilisé pour permettre à un utilisateur de créer une critique en réponse à un ticket existant. -->
 
-{% block title %} Créer une critique {% endblock %}
+{% extends "blog/base.html" %}  <!-- Héritage de la structure de base du fichier "base.html" du dossier "blog". -->
 
-{% block content %}
-    <h1 class="title">Créer une critique</h1>
-    <div class="content_style">
+{% block title %} Créer une critique {% endblock %}  <!-- Définition du titre de la page. -->
+
+{% block content %}  <!-- Début du contenu principal de la page. -->
+
+    <h1 class="title">Créer une critique</h1>  <!-- Titre principal de la page. -->
+
+    <div class="content_style">  <!-- Conteneur principal pour styliser le contenu. -->
+
+        <!-- Indication à l'utilisateur qu'il est en train de répondre à un ticket spécifique. -->
         <h2>Vous êtes en train de poster en réponse à</h2>
+
+        <!-- Conteneur pour le ticket auquel l'utilisateur répond. -->
         <div class="ticket_old">
-           {% if ticket.user == request.user %}
+
+            <!-- Si le ticket a été créé par l'utilisateur lui-même. -->
+            {% if ticket.user == request.user %}
                 <h2>Vous avez demandé une critique</h2>
-            {% else %}
+            {% else %}  <!-- Si le ticket a été créé par un autre utilisateur. -->
                 <h2>{{ticket.user}} a demandé une critique </h2>
             {% endif %}
+
+            <!-- Inclusion du modèle partiel "ticket_snippet.html" pour afficher les détails du ticket. -->
             {% include 'blog/partials/ticket_snippet.html' %}
         </div>
+
+        <!-- Conteneur pour le formulaire de critique. -->
         <div>
+
+            <!-- Titre indiquant que l'utilisateur est sur le point de créer une critique. -->
             <h2>Critique</h2>
+
+            <!-- Formulaire pour créer la critique. -->
             <form action="" method="post"> {% csrf_token %}
+                <!-- Affichage des champs du formulaire. -->
                 {{ review_form.as_p }}
+
+                <!-- Bouton de soumission du formulaire. -->
                 <div class="btn_right">
                     <div></div>
                     <input class="btn btn-outline-dark" type="submit" value="Envoyer">
@@ -25,4 +46,5 @@
             </form>
         </div>
     </div>
+
 {% endblock content %}

@@ -1,25 +1,47 @@
-{% extends "blog/base.html" %}
+<!-- Le fichier "review_update.html" est utilisé pour permettre à un utilisateur de modifier une critique qu'il a précédemment créée. -->
+
+{% extends "blog/base.html" %}  <!-- Héritage de la structure de base du fichier "base.html" du dossier "blog". -->
 
 {% block title %}Modifier votre critique{% endblock %}
-{% block content %}
-  <h1 class="title">Modifier votre critique</h1>
-    <div class="content_style make_review ">
+<!-- Définition du titre de la page. -->
+
+{% block content %}  <!-- Début du contenu principal de la page. -->
+
+    <h1 class="title">Modifier votre critique</h1>
+    <!-- Titre principal de la page. -->
+
+    <div class="content_style make_review "> <!-- Conteneur principal pour styliser le contenu. -->
+
+        <!-- Information sur laquelle l'utilisateur répond en postant la critique. -->
         <h2>Vous êtes en train de poster en réponse à</h2>
-        <div class="ticket_old" >
+        <div class="ticket_old">
+            <!-- Vérification de l'utilisateur qui a posté le ticket. -->
             {% if ticket.user == request.user %}
                 <h2>Vous avez demandé une critique</h2>
             {% else %}
                 <h2>{{ticket.user}} a demandé une critique </h2>
             {% endif %}
+            
+            <!-- Affichage de la date et de l'heure de création du ticket. -->
             <h2 class="date">{{ticket.time_created|date:"h:i, j F Y"}}</h2>
+            
+            <!-- Affichage du titre et de la description du ticket. -->
             <h2>{{ticket.title}} - {{ticket.description}} </h2>
+            
+            <!-- Affichage de l'image associée au ticket, si elle existe. -->
             <p><img src="{{ticket.image.url}}"></p>
         </div>
 
+        <!-- Section pour la modification de la critique. -->
         <h1>Critique</h1>
-            <div>
-            <form action="" method="post"> {% csrf_token %}
+        <div>
+            <!-- Formulaire pour modifier la critique. -->
+            <form action="" method="post">
+                {% csrf_token %}
+                <!-- Affichage des champs du formulaire pour la modification de la critique. -->
                 {{ form.as_p }}
+                
+                <!-- Bouton pour soumettre la modification. -->
                 <div class="btn_right">
                     <div></div>
                     <input class="btn btn-outline-dark" type="submit" value="Modifier">
@@ -27,4 +49,5 @@
             </form>
         </div>
     </div>
+
 {% endblock content %}

@@ -1,44 +1,64 @@
-{% extends "blog/base.html" %}
-{% load static %}
-{% load blog_extras %}
+<!-- Le fichier "post.html" est utilisé pour afficher les posts (billets et critiques) créés par l'utilisateur actuellement connecté. -->
 
-{% block title %}Voir vos propres post{% endblock %}
+{% extends "blog/base.html" %}  <!-- Héritage de la structure de base du fichier "base.html" du dossier "blog". -->
 
-{% block content %}
-    <h1 class="title">Vos posts</h1>
+{% load static %}  <!-- Chargement des balises statiques pour accéder aux fichiers statiques, comme les CSS ou les images. -->
+{% load blog_extras %}  <!-- Chargement des balises personnalisées liées à l'application de blog. -->
+
+{% block title %}Voir vos propres post{% endblock %}  <!-- Définition du titre de la page. -->
+
+{% block content %}  <!-- Début du contenu principal de la page. -->
+
+    <h1 class="title">Vos posts</h1>  <!-- Titre principal de la page. -->
+
+    <!-- Boucle sur chaque objet (instance) dans "page_obj", qui contient probablement une paginée de posts. -->
     {% for instance in page_obj %}
+
+        <!-- Si l'objet est un Ticket. -->
         {% if instance|model_type == 'Ticket' %}
             <div class="ticket_post content_style">
                 <h2>Vous avez publié un ticket</h2>
+                <!-- Inclusion du modèle partiel "ticket_snippet.html" pour afficher le ticket. -->
                 {% include 'blog/partials/ticket_snippet.html' with ticket=instance %}
+
+                <!-- Boutons pour modifier ou supprimer le ticket. -->
                 <div class="post_btns">
+                    <!-- Bouton supprimer. -->
                     <div class="btn_delete">
-                        <form  action="{% url 'ticket_delete' instance.id %}" method='get' >
+                        <form action="{% url 'ticket_delete' instance.id %}" method='get'>
                             {% csrf_token %}
                             <input class="btn btns btn-outline-dark" type='submit' value="Supprimer">
                         </form>
                     </div>
+                    <!-- Bouton modifier. -->
                     <div class="btn_update">
-                        <form  action="{% url 'ticket_update' instance.id %}" method='get' >
+                        <form action="{% url 'ticket_update' instance.id %}" method='get'>
                             {% csrf_token %}
                             <input class="btn btns btn-outline-dark" type='submit' value="Modifier">
                         </form>
                     </div>
                 </div>
             </div>
+
+        <!-- Si l'objet est une Review. -->
         {% elif instance|model_type == 'Review' %}
             <div class="review_post content_style">
                 <h2>Vous avez publié une critique</h2>
+                <!-- Inclusion du modèle partiel "review_snippet.html" pour afficher la critique. -->
                 {% include 'blog/partials/review_snippet.html' with review=instance %}
+
+                <!-- Boutons pour modifier ou supprimer la critique. -->
                 <div class="post_btns">
+                    <!-- Bouton supprimer. -->
                     <div class="btn_delete">
-                        <form  action="{% url 'review_delete' instance.id %}" method='get' >
+                        <form action="{% url 'review_delete' instance.id %}" method='get'>
                             {% csrf_token %}
                             <input class="btn btns btn-outline-dark" type='submit' value="Supprimer">
                         </form>
                     </div>
+                    <!-- Bouton modifier. -->
                     <div class="btn_update ">
-                        <form  action="{% url 'review_update' instance.id %}" method='get' >
+                        <form action="{% url 'review_update' instance.id %}" method='get'>
                             {% csrf_token %}
                             <input class="btn btns btn-outline-dark" type='submit' value="Modifier">
                         </form>
@@ -47,19 +67,25 @@
             </div>
         {% endif %}
     {% endfor %}
+
+    <!-- Pagination : boutons pour naviguer entre les différentes pages de posts. -->
     <div class="page_number">
+        <span>
+            <!-- Si il y a une page précédente. -->
+            {% if page_obj.has_previous %}
+                <a href="?page=1"><< première</a>
+                <a href="?page={{ page_obj.previous_page_number }}">précédente</a>
+            {% endif %}
+            <!-- Affichage de la page actuelle et du nombre total de pages. -->
             <span>
-                {% if page_obj.has_previous %}
-                    <a href="?page=1"><< première</a>
-                    <a href="?page={{ page_obj.previous_page_number}}">précédente</a>
-                {% endif %}
-                <span>
-                 Page {{ page_obj.number}} sur {{ page_obj.paginator.num_pages }}.
-                </span>
-                {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}">suivante</a>
-                    <a href="?page={{ page_obj.paginator.num_pages }}">dernière >></a>
-                {% endif %}
+                Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}.
             </span>
+            <!-- Si il y a une page suivante. -->
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">suivante</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">dernière >></a>
+            {% endif %}
+        </span>
     </div>
+
 {% endblock content %}
