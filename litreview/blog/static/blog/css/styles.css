@@ -330,4 +330,13 @@ img {
     font-weight: bold !important;
     margin-top: 10px;
 }
+
+button.btn.btn-outline-dark {
+    color: white;
+    background-color: #fb0303;
+    background-image: none;
+    border-color: #343a40;
+    font-weight: 900;
+    margin-top: 15px;
+}
 /* Powered By M. EL-WALID EL-KHABOU*/
