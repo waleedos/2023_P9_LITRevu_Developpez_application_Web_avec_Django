@@ -1,41 +1,59 @@
-{% extends "blog/base.html" %}
+<!-- Le fichier "subscrip.html" est conçu pour gérer les abonnements de l'utilisateur. Il permet à l'utilisateur de suivre d'autres utilisateurs et de voir la liste des utilisateurs qu'il suit ainsi que ceux qui le suivent. -->
 
-{% block title %}Abonnements{% endblock %}
+{% extends "blog/base.html" %}  
+<!-- Héritage de la structure de base du fichier "base.html" du dossier "blog". -->
 
-{% block content %}
+{% block title %}Abonnements{% endblock %} 
+<!-- Définition du titre de la page. -->
+
+{% block content %}  <!-- Début du contenu principal de la page. -->
+
     <h1 class="follow_user">Suivre d'autres utilisateurs</h1>
+    <!-- Titre indiquant que cette section est destinée à suivre d'autres utilisateurs. -->
+
     <div class="content_style follow_page">
-        <form method="post" >{% csrf_token %}
-            {{form}}
-            <button class=" btn btn-outline-dark" type="submit">Envoyer</button>
-            <p style="color: red;">{{error}}</p>
-            <p style="color: red;">{{message}}</p>
+        <!-- Conteneur stylisé pour la page d'abonnement. -->
+
+        <!-- Formulaire pour suivre de nouveaux utilisateurs. -->
+        <form method="post">
+            {% csrf_token %}  <!-- Jeton pour protéger le formulaire contre les attaques CSRF. -->
+            {{ form }}  <!-- Affiche le formulaire pour entrer le nom d'utilisateur à suivre. -->
+            <button class="btn btn-outline-dark" type="submit">Envoyer</button>
+            <!-- Bouton pour soumettre le formulaire. -->
+
+            <!-- Messages d'erreur ou de confirmation après soumission. -->
+            <p style="color: red;">{{ error }}</p>
+            <p style="color: red;">{{ message }}</p>
         </form>
+
+        <!-- Section pour afficher la liste des utilisateurs suivis. -->
         <div class="follow">
             <h1>Abonnements</h1>
-            <table  class="tab_follower" width="500" border="1" style="border-collapse:collapse">
+            <table class="tab_follower" width="500" border="1" style="border-collapse:collapse">
                 <tbody>
-                    {% for user in followed_users%}
+                    {% for user in followed_users %}
                         <tr>
-                            <td class="tab_follow">{{user.username}}</td>
-                            <td><a href="{% url 'unsubscrip' user.id %}">Désabonner </a></td>
+                            <td class="tab_follow">{{ user.username }}</td>
+                            <td><a href="{% url 'unsubscrip' user.id %}">Désabonner</a></td>
                         </tr>
                     {% endfor %}
-
                 </tbody>
             </table>
         </div>
+
+        <!-- Section pour afficher la liste des abonnés (utilisateurs qui suivent l'utilisateur actuel). -->
         <div class="follow">
             <h1>Abonnés</h1>
             <table class="tab_follower" width="500" border="1" style="border-collapse:collapse">
                 <tbody>
-                {% for user in followers %}
-                <tr>
-                    <td class="tab_follow"  >{{user.username}} </td>
-                </tr>
-                {% endfor %}
+                    {% for user in followers %}
+                        <tr>
+                            <td class="tab_follow">{{ user.username }}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
+
 {% endblock content %}

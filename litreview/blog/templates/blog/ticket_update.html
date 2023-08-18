@@ -1,17 +1,42 @@
-{% extends "blog/base.html" %}
+<!-- Le fichier "ticket_update.html" est conçu pour permettre à l'utilisateur de mettre à jour un ticket qu'il a précédemment créé. -->
+
+{% extends "blog/base.html" %}  
+<!-- Héritage de la structure de base du fichier "base.html" du dossier "blog". -->
 
 {% block title %}Modifier votre ticket{% endblock %}
-{% block content %}
-  <h1 class="title">Modifier votre ticket</h1>
-  <div class="content_style">
-    <form action="" method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <p><img src="{{ticket.image.url}}"/></p>
-        <div class="btn_right">
-            <div></div>
-            <input class="btn  btn-outline-dark" type="submit" value="Modifier">
-        </div>
+<!-- Définition du titre de la page. Il indique que cette page est destinée à la modification d'un ticket. -->
 
-    </form>
-  </div>
+{% block content %}  <!-- Début du contenu principal de la page. -->
+
+    <h1 class="title">Modifier votre ticket</h1>
+    <!-- Titre principal indiquant que l'utilisateur est sur la page de modification du ticket. -->
+
+    <div class="content_style">
+    <!-- Conteneur stylisé pour le contenu de la mise à jour du ticket. -->
+
+        <form action="" method="post">
+        <!-- Formulaire pour la mise à jour du ticket. -->
+
+            {% csrf_token %}  
+            <!-- Jeton pour protéger le formulaire contre les attaques CSRF. -->
+
+            {{ form.as_p }}
+            <!-- Rendu du formulaire sous forme de paragraphes. 
+                 Cela affiche chaque champ du formulaire comme un élément de paragraphe. -->
+
+            <p><img src="{{ticket.image.url}}"/></p>
+            <!-- Affiche l'image actuelle associée au ticket. 
+                 Ceci est utile pour rappeler à l'utilisateur l'image actuelle avant qu'il ne décide de la modifier. -->
+
+            <div class="btn_right">
+            <!-- Conteneur stylisé pour le bouton de mise à jour. -->
+                <div></div>
+                <!-- Espace vide pour le style. -->
+
+                <input class="btn btn-outline-dark" type="submit" value="Modifier">
+                <!-- Bouton pour soumettre le formulaire de mise à jour. -->
+            </div>
+
+        </form>
+    </div>
 {% endblock content %}

@@ -1,24 +1,44 @@
-{% extends "blog/base.html" %}
+<!-- Le fichier "ticket_delete.html" est conçu pour permettre à l'utilisateur de supprimer un ticket qu'il a précédemment créé. -->
+
+{% extends "blog/base.html" %}  
+<!-- Héritage de la structure de base du fichier "base.html" du dossier "blog". -->
 
 {% block title %}Supprimer votre ticket{% endblock %}
-{% block content %}
-    <h1>Supprimer votre ticket</h1>
-    <div class="content_style">
-        <p>Etes-vous sûr de vouloir supprimer le ticket : {{ ticket.title }} ?</p>
-        <div class="btn_ticket_delete">
-          <div>
-              <form action="" method="post">
-                {% csrf_token %}
-                <input class="btn btn-outline-dark" type="submit" value="Supprimer">
-              </form>
-          </div>
+<!-- Définition du titre de la page. -->
 
-          <div>
-            <form  action="{% url 'post' %}" method='get'>
-              {% csrf_token %}
-              <input class="btn btn_cancel btn-outline-dark"  type='submit' value='Annuler'>
-            </form>
-          </div>
+{% block content %}  <!-- Début du contenu principal de la page. -->
+
+    <h1>Supprimer votre ticket</h1>
+    <!-- Titre indiquant que cette page est destinée à supprimer un ticket. -->
+
+    <div class="content_style">
+    <!-- Conteneur stylisé pour le contenu de la suppression. -->
+
+        <!-- Message demandant confirmation à l'utilisateur s'il souhaite vraiment supprimer le ticket spécifié. -->
+        <p>Etes-vous sûr de vouloir supprimer le ticket : {{ ticket.title }} ?</p>
+
+        <div class="btn_ticket_delete">
+        <!-- Conteneur pour les boutons de suppression et d'annulation. -->
+
+            <div>
+            <!-- Conteneur pour le bouton de suppression. -->
+                <form action="" method="post">
+                <!-- Formulaire pour la suppression du ticket. -->
+                    {% csrf_token %}  <!-- Jeton pour protéger le formulaire contre les attaques CSRF. -->
+                    <input class="btn btn-outline-dark" type="submit" value="Supprimer">
+                    <!-- Bouton pour soumettre le formulaire de suppression. -->
+                </form>
+            </div>
+
+            <div>
+            <!-- Conteneur pour le bouton d'annulation. -->
+                <form action="{% url 'post' %}" method='get'>
+                <!-- Formulaire pour annuler l'action et retourner à la page des posts. -->
+                    {% csrf_token %}
+                    <input class="btn btn_cancel btn-outline-dark" type='submit' value='Annuler'>
+                    <!-- Bouton pour soumettre le formulaire d'annulation. -->
+                </form>
+            </div>
         </div>
     </div>
 {% endblock content %}
