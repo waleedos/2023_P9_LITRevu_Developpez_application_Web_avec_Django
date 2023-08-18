@@ -1,16 +1,36 @@
-{% extends "blog/base.html" %}
+<!--Le fichier create_ticket.html étend le modèle "blog/base.html", ce qui signifie qu'il hérite
+    de toute la structure HTML et des blocs de contenu définis dans "base.html".-->
+    {% extends "blog/base.html" %}
 
-{% block title %}Créer un ticket{% endblock %}
-
-{% block content %}
-    <h1 class="title">Créer un ticket</h1>
-    <div class="content_style">
-        <form method="post" enctype="multipart/form-data">{% csrf_token %}
-            {{ form.as_p}}
-            <div class="btn_right">
-                <div></div>
-                <button class="btn btn_ticket btn-outline-dark" type="submit">Envoyer</button>
-            </div>
-        </form>
-    </div>
-{% endblock content %}
+    <!--Le titre de la page est défini comme "Créer un ticket" en utilisant le bloc "title" défini dans le
+        modèle parent "base.html".-->
+    {% block title %}Créer un ticket{% endblock %}
+    
+    <!--Le contenu principal de la page est défini dans le bloc "content". Tout ce qui est défini ici
+        remplacera le contenu du bloc "content" correspondant dans "base.html".-->
+    {% block content %}
+    
+        <!--Un en-tête est affiché avec le texte "Créer un ticket".-->
+        <h1 class="title">Créer un ticket</h1>
+        
+        <!--Un conteneur pour le contenu principal du formulaire. La classe "content_style" est probablement
+            utilisée pour appliquer des styles CSS spécifiques à ce conteneur.-->
+        <div class="content_style">
+    
+            <!--Début du formulaire pour créer un ticket. La méthode HTTP "post" est utilisée pour soumettre
+                le formulaire. L'attribut "enctype" est défini pour permettre l'envoi de fichiers (par exemple,
+                une image associée au ticket).-->
+            <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                <!--Le jeton CSRF est ajouté au formulaire pour protéger contre les attaques CSRF. C'est une
+                pratique de sécurité standard dans les applications Django.-->
+    
+                <!--Le formulaire est affiché en utilisant le format "as_p", ce qui signifie que chaque champ
+                du formulaire est rendu comme un paragraphe.-->            
+                {{ form.as_p}}
+                <div class="btn_right">
+                    <div></div>
+                    <button class="btn btn_ticket btn-outline-dark" type="submit">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    {% endblock content %}

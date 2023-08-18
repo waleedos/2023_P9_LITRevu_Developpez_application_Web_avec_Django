@@ -4,6 +4,9 @@
   <head>
       <meta charset="UTF-8">
       <title>{% block title %}{% endblock %}</title>
+      <!--Ce bloc est destiné à être remplacé dans les templates qui étendent ce modèle pour fournir un
+        titre spécifique à chaque page.-->
+
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/
         normalize.min.css">
@@ -17,10 +20,13 @@
                     <div class="blog_logo">
                         <img src="{% static 'blog/image/logo.png' %}" alt="LOGO" width="100" >
                     </div>
+                    
+                    
                     <div class="brain-right">
                         <div class="current_user">
                             <h1>Bienvenue {{user}}</h1>
                         </div>
+                        <!--Affiche un message de bienvenue à l'utilisateur actuellement connecté.-->
 
                         <ul class="navbar">
                             <li><a href="{% url 'flux' %}">Flux</a></li>
@@ -28,10 +34,13 @@
                             <li><a href="{% url 'subscrip' %}">Abonnements</a></li>
                             <li><a href="{% url 'logout' %}">Se déconnecter</a></li>
                         </ul>
+                        <!--Affiche la barre de navigation avec des liens vers différentes parties de l'application.-->
 
                     </div>
                  </nav>
             </header>
+
+            <!--Ce bloc est destiné à être remplacé par le contenu spécifique de chaque page qui étend ce modèle.-->
             <div class="container block_blog">
                 <div class="row">
                     <div class="col-md-2"></div>

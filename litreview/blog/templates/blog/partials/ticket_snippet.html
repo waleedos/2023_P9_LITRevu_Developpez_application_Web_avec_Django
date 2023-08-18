@@ -1,6 +1,19 @@
+<!--Le fichier ticket_snippet.html est un autre modèle partiel, utilisé pour afficher des extraits
+    ou des segments de tickets dans votre application. Voici une explication détaillée de son contenu :-->
+
 {% load blog_extras %}
+<!--Chargement des balises personnalisées : Les balises blog_extras (des balises de modèlepersonnalisées
+    liées à l'application de blog) sont chargées pour être utilisées dans le modèle.-->
 
     <h2 class="date"> {{ticket.time_created|date:"H:i, j F Y"}} </h2>
-    <h2> {{ticket.title}} - {{ticket.description}}</h2>
-    <img class="ticket_post_img" src="{{ticket.image.url}}">
+    <!--Date et heure de création du ticket : La date et l'heure de création du ticket sont formatées et
+        affichées. L'utilisation de la balise date permet de formater la date et l'heure selon le format
+        spécifié, ici "Heure:Minute, Jour Mois Année".-->
 
+    <h2> {{ticket.title}} - {{ticket.description}}</h2>
+    <!--Titre et description du ticket : Le titre et la description du ticket sont affichés. Il s'agit du
+        contenu principal du ticket.-->
+    
+    <img class="ticket_post_img" src="{{ticket.image.url}}">
+    <!--Image du ticket : Si le ticket a une image associée, elle est affichée. L'URL de l'image est
+        récupérée de l'attribut image.url du ticket.-->
