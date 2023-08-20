@@ -101,15 +101,15 @@ h1 {
     margin: 0px 6px !important;
 }
 
-footer{
-    background-color:black;
+footer {
+    background-color: black;
     text-align: center;
     margin-bottom: 2px;
-    padding-top: 10px;
-    height: 40px;
+    padding-top: 15px;
+    height: 45px;
     color: white;
     font-weight: 900;
-    font-family: 'Bricolage Grotesque'
+    font-family: 'Bricolage Grotesque';
 }
 
 h2{
@@ -120,7 +120,7 @@ h2{
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 98vh;
+    min-height: 97.3vh;
 }
 
 .content-container {
