@@ -23,6 +23,16 @@ Les fonctionnalités prévues pour l'application comprennent :
 
 7. Cet ensemble de fonctionnalités a été conçu pour répondre aux besoins précis de la communauté et garantir une expérience utilisateur optimale.
 
+
+## Liste des documents fournis avec la mission :
+
+1. [La mission de ce projet](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/1-Mission-Projet_Litreview/1-Mission.pdf)
+2. [Cahier des charges de ce projet](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/1-Mission-Projet_Litreview/2-Cahier_des_charges.pdf)
+3. [Guide des étapes clés à suivre pour ce projet](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/1-Mission-Projet_Litreview/3-Guide_des_etapes_cles.pdf)
+4. [Schéma de la base de données à suivre pour ce projet](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/1-Mission-Projet_Litreview/4-Schema_de_la_base_de_donnees.pdf)
+5. [Les WireFrames à suivre pour ce projet](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/1-Mission-Projet_Litreview/5-Wireframes-FR.pdf)
+6. [Exemple du fichier models.py pour s'inspirer](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/1-Mission-Projet_Litreview/6-models.py.pdf)
+
 ## Installation et exécution de l'application 
 
 Vous devriez avoir une copie intégrale de ce code :
@@ -130,6 +140,15 @@ flake8 --format=html --htmldir=flake-report
 ```
 Puis, démarrez le fichier index.html existant dans le dossier /flake-report de la racine du projet
 
+
+## Guide complet pour reconstruire ce projet depuis le debut
+
+[Guide complet pour reconstruire ce projet](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/2-Conclusions/1-Guide_complet_pour_reconstruire_ce_projet_depuis_le_debut.pdf)
+
+
+
 ### Powered by EL-WALID EL-KHABOU
 
 E-mail : ewek.dev@gmail.com
+
+
