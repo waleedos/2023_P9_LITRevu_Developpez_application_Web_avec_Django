@@ -10,8 +10,8 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     # Définition de la classe User : Nous définissons une classe User qui hérite de AbstractUser. En faisant cela, notre
     # modèle User hérite de tous les champs et méthodes de AbstractUser, ce qui le rend compatible avec le système
-    # d'authentification intégré de Django. Cela signifie également que Nous pouvons ajouter des champs supplémentaires à ce
-    # modèle à l'avenir si nous en avons besoin, sans avoir à redéfinir tout le modèle utilisateur.
+    # d'authentification intégré de Django. Cela signifie également que Nous pouvons ajouter des champs supplémentaires
+    # à ce modèle à l'avenir si nous en avons besoin, sans avoir à redéfinir tout le modèle utilisateur.
 
     # Utilisation de la méthode __str__ qui est une représentation sous forme de chaîne du modèle. Lorsqu'une instance
     # du modèle User est convertie en chaîne (par exemple, pour l'affichage dans l'interface d'administration de Django),

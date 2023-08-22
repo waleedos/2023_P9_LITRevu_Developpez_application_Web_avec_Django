@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!@2is*b8!00p+rmzhq)g=a)36pzrkn9nmr7+=^ym!x(3^b7v&='
+SECRET_KEY = 'rbe!i)gyrdbk0(#xo96(06$wf*1tw7b1kk!co3l7v1sg@@dsn7'
 # clé unique et secrète utilisée par Django pour diverses tâches cryptographiques. Pour des raisons de sécurité, cette
 # clé doit rester secrète et être unique pour chaque installation de Django.
 
