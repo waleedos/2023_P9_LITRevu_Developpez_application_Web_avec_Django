@@ -305,6 +305,7 @@ img {
 .ticket_review .ticket_review_content h2 {
     padding-top: 15px;
     padding-left: 20px;
+    text-align: justify !important;
 }
 
 .link-suivante {
