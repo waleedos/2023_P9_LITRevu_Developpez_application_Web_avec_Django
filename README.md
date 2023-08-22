@@ -160,7 +160,7 @@ Puis, démarrez le fichier index.html existant dans le dossier /flake-report de 
 
 ## Veille Technologique sur Django & Python
 
-[Suivre ce lien:](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/3-Veille-technologique-finale.pdf)
+[Suivre ce lien pour ma veille technologique :](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/2-Conclusions/3-Veille-technologique-finale.pdf)
 
 
 ### Powered by EL-WALID EL-KHABOU
