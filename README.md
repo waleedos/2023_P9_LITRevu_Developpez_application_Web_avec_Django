@@ -141,7 +141,7 @@ flake8 --format=html --htmldir=flake-report
 ```
 Puis, démarrez le fichier index.html existant dans le dossier /flake-report de la racine du projet
 
-
+<h2 style="color:green">Guide complet pour reconstruire ce projet depuis le debut</h2>
 ## Guide complet pour reconstruire ce projet depuis le debut
 
 [Guide complet pour reconstruire ce projet](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/2-Conclusions/1-Guide_complet_pour_reconstruire_ce_projet_depuis_le_debut.pdf)
