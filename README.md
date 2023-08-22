@@ -130,6 +130,7 @@ Executez la commande suivante quand vous etes à la racine du projet :
 ```
 tree -I 'env|__pycache__|flake-report|__init__.py|migrations' >> structure_ce_projet.txt
 ```
+[Click pour voir la structure actuelle:](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/structure_ce_projet.txt)
 
 ### Pep8
 
@@ -145,6 +146,15 @@ Puis, démarrez le fichier index.html existant dans le dossier /flake-report de 
 
 [Guide complet pour reconstruire ce projet](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/2-Conclusions/1-Guide_complet_pour_reconstruire_ce_projet_depuis_le_debut.pdf)
 
+
+## Diagram des tables & relations de ma base de données
+
+[Voir le diagram des tables de ma bese de donnée actuelle:](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/my_project_diagram.png)
+
+
+## Questions / Réponses & Conclusions :
+
+[Voir mon rapport des Questions/Reponses:](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/2-Conclusions/2-Questions-Reponses.pdf) 
 
 
 ### Powered by EL-WALID EL-KHABOU
