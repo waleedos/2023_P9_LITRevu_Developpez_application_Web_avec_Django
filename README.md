@@ -109,10 +109,10 @@ Vous trouverez dans le tableau ‘Comptes utilisateurs’ ci-dessous les identif
 | admin             | EL-walid_1234@+  | Super-Utilisateur|
 | Si-Mo             | Courtoi26        | Utilisateur      |
 | Souzane62         | Bitros95+        | Utilisateur      |
-| Nadej39           | Kilom95+7        | Utilisateur      |
+| Lisa92            | Kilom95+7        | Utilisateur      |
 | Florent26         | Kabis95200+      | Utilisateur      |
 | François40        | Limoge92008      | Utilisateur      |
-| EL-Walid13        | Base1304@+       | Utilisateur      |
+| Walid13           | Base1304@+       | Utilisateur      |
 
 
 ## Interface d’administration
@@ -141,10 +141,10 @@ flake8 --format=html --htmldir=flake-report
 ```
 Puis, démarrez le fichier index.html existant dans le dossier /flake-report de la racine du projet
 
-<h2 style="color:green">Guide complet pour reconstruire ce projet depuis le debut</h2>
-## Guide complet pour reconstruire ce projet depuis le debut
+## Guide complet pour reconstruire ce projet depuis le debut:
 
 [Guide complet pour reconstruire ce projet](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/2-Conclusions/1-Guide_complet_pour_reconstruire_ce_projet_depuis_le_debut.pdf)
+
 
 
 ## Diagram des tables & relations de ma base de données
@@ -152,9 +152,15 @@ Puis, démarrez le fichier index.html existant dans le dossier /flake-report de 
 [Voir le diagram des tables de ma bese de donnée actuelle:](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/my_project_diagram.png)
 
 
+
 ## Questions / Réponses & Conclusions :
 
 [Voir mon rapport des Questions/Reponses:](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/2-Conclusions/2-Questions-Reponses.pdf) 
+
+
+## Veille Technologique sur Django & Python
+
+[Suivre ce lien:](https://github.com/waleedos/2023_P9_LITRevu_Developpez_application_Web_avec_Django/blob/main/documentation/3-Veille-technologique-finale.pdf)
 
 
 ### Powered by EL-WALID EL-KHABOU
