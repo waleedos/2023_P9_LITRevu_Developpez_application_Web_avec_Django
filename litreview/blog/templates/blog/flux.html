@@ -32,9 +32,9 @@
                 <div class="flux_ticket content_style">
                     <!-- Vérification de l'utilisateur du ticket et affichage en conséquence. -->
                     {% if instance.user == request.user %}
-                        <h2>Vous avez demandé une critique</h2>
+                        <h2 data-user="seul">Vous avez demandé une critique</h2>
                     {% else %}
-                        <h2>{{instance.user}} a demandé une critique </h2>
+                        <h2 data-user="autre">{{instance.user}} a demandé une critique </h2>
                     {% endif %}
                     <!-- Inclusion du modèle partiel pour le ticket. -->
                     {% include 'blog/partials/ticket_snippet.html' with ticket=instance %}
@@ -57,9 +57,9 @@
                 <div class="review_post content_style">
                     <!-- Vérification de l'utilisateur de la critique et affichage en conséquence. -->
                     {% if instance.user == request.user %}
-                        <h2>Vous avez publié une critique</h2>
+                        <h2 data-user="self">Vous avez publié une critique</h2>
                     {% else %}
-                        <h2>{{instance.user}} a publié une critique </h2>
+                        <h2 data-user="other"> {{instance.user}} a publié une critique </h2>
                     {% endif %}
                     <!-- Inclusion du modèle partiel pour la critique. -->
                     {% include 'blog/partials/review_snippet.html' with review=instance %}
