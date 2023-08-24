@@ -1,7 +1,19 @@
 .
 ├── documentation
+│   ├── 1-Mission-Projet_Litreview
+│   │   ├── 1-Mission.pdf
+│   │   ├── 2-Cahier_des_charges.pdf
+│   │   ├── 3-Guide_des_etapes_cles.pdf
+│   │   ├── 4-Schema_de_la_base_de_donnees.pdf
+│   │   ├── 5-Wireframes-FR.pdf
+│   │   └── 6-models.py.pdf
+│   ├── 2-Conclusions
+│   │   ├── 1-Guide_complet_pour_reconstruire_ce_projet_depuis_le_debut.pdf
+│   │   ├── 2-Questions-Reponses.pdf
+│   │   └── 3-Veille-technologique-finale.pdf
 │   ├── litreview_logo.png
-│   └── my_project_diagram.png
+│   ├── my_project_diagram.png
+│   └── structure_ce_projet.txt
 ├── litreview
 │   ├── authentication
 │   │   ├── admin.py
@@ -66,11 +78,17 @@
 │   │   └── wsgi.py
 │   ├── manage.py
 │   └── media
-│       ├── 2_8DHPpTB.jpg
+│       ├── 10.jpg
+│       ├── 1.jpg
 │       ├── 2.jpg
-│       └── 5.jpeg
+│       ├── 3.jpg
+│       ├── 4.jpg
+│       ├── 6.jpeg
+│       ├── 7.jpg
+│       ├── 8.jpg
+│       └── 9.jpg
 ├── README.md
 ├── requirements.txt
 └── structure_ce_projet.txt
 
-19 directories, 54 files
+21 directories, 70 files

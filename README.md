@@ -113,6 +113,8 @@ Vous trouverez dans le tableau ‘Comptes utilisateurs’ ci-dessous les identif
 | Florent26         | Kabis95200+      | Utilisateur      |
 | François40        | Limoge92008      | Utilisateur      |
 | Walid13           | Base1304@+       | Utilisateur      |
+| Soutenance        | Bose1304@+       | Utilisateur      |
+
 
 
 ## Interface d’administration
